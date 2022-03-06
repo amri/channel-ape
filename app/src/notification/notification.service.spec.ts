@@ -2,13 +2,14 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { NotificationService } from './notification.service';
 import { CreateNotificationCommand } from './dtos/createNotificationCommand';
 import exp from 'constants';
+import { RenderService } from '../render/render.service';
 
 describe('NotificationService', () => {
   let service: NotificationService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [NotificationService],
+      providers: [NotificationService, RenderService],
     }).compile();
 
     service = module.get<NotificationService>(NotificationService);
@@ -36,5 +37,14 @@ describe('NotificationService', () => {
     const result = service.postNotification(createNotificationCommand);
     expect(result.length).toBeGreaterThan(1);
     expect(result).toContain('Amri');
+  });
+
+  it('given a notification, it should return rendered message', () => {
+    const createNotificationCommand: CreateNotificationCommand =
+      new CreateNotificationCommand('happy-birthday', 'Amri');
+    const result = service.postNotification(createNotificationCommand);
+    expect(result.length).toBeGreaterThan(1);
+    expect(result).toContain('Amri');
+    expect(result).toContain('Happy Birthday');
   });
 });
