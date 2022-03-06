@@ -1,6 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import {RenderService} from "./render/render.service";
+import {EmailChannel} from "./notification/channels/emailChannel";
+import {Channel} from "./notification/channels/channel";
 
 describe('AppController', () => {
   let appController: AppController;

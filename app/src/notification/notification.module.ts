@@ -3,6 +3,8 @@ import { NotificationService } from './notification.service';
 import { NotificationController } from './notification.controller';
 import { RenderService } from '../render/render.service';
 import { RenderModule } from '../render/render.module';
+import {EmailChannel} from "./channels/emailChannel";
+import {Channel} from "./channels/channel";
 
 @Module({
   imports: [RenderModule],

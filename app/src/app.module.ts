@@ -6,6 +6,8 @@ import { NotificationController } from './notification/notification.controller';
 import { NotificationService } from './notification/notification.service';
 import { RenderService } from './render/render.service';
 import { RenderModule } from './render/render.module';
+import {EmailChannel} from "./notification/channels/emailChannel";
+import {Channel} from "./notification/channels/channel";
 
 @Module({
   imports: [NotificationModule, RenderModule],

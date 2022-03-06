@@ -1,5 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RenderService } from './render.service';
+import {EmailChannel} from "../notification/channels/emailChannel";
+import {Channel} from "../notification/channels/channel";
 
 describe('RenderService', () => {
   let service: RenderService;
