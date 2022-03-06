@@ -1,0 +1,29 @@
+leave-balance_reminder
+[
+    {
+        "name": "ui-channel",
+        "content": "Happy Birthday {{=it.firstName}}"
+    }
+]
+
+monthly-payslip
+[
+    {
+        "name": "email-channel",
+        "content": "{{=it.companyName}} is wishing you a happy birthday",
+        "subject": "Happy Birthday {{=it.firstName}}"
+    }
+]
+
+monthly-payslip
+[
+    {
+        "name": "email-channel",
+        "content": "{{=it.companyName}} is wishing you a happy birthday",
+        "subject": "Happy Birthday {{=it.firstName}}"
+    },
+    {
+        "name": "ui-channel",
+        "content": "Happy Birthday {{=it.firstName}}"
+    }
+]

@@ -1,5 +1,5 @@
-import {RenderService} from '../../render/render.service';
-import {Template} from '../dtos/template';
+import { RenderService } from '../../render/render.service';
+import { Template } from '../dtos/template';
 
 export abstract class Channel {
   private readonly renderService: RenderService;
@@ -37,4 +37,3 @@ export abstract class Channel {
 
   abstract process(): string;
 }
-
