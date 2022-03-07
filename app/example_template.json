@@ -27,3 +27,7 @@ monthly-payslip
         "content": "Happy Birthday {{=it.firstName}}"
     }
 ]
+
+[{"name": "content", "content": "Hi, {{=it.firstName}}, your monthly payslip is now available"}, {"name": "subject", "content": "Month {{=it.month}} {{=it.year}} payslip"}]
+
+mongoimport --host localhost --db nest --collection templatemodels --type json --file /init.json --jsonArray

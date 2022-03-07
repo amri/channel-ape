@@ -1,7 +1,18 @@
+import { ApiProperty } from '@nestjs/swagger';
+
 export class SendNotificationDto {
-  constructor(
-    public companyId: number,
-    public userId: number,
-    public notificationType: string,
-  ) {}
+  @ApiProperty()
+  public companyId: number;
+
+  @ApiProperty()
+  public userId: number;
+
+  @ApiProperty()
+  public notificationType: string;
+
+  constructor(notificationType: string, companyId: number, userId?: number) {
+    this.notificationType = notificationType;
+    this.userId = userId;
+    this.companyId = companyId;
+  }
 }

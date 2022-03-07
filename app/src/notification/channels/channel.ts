@@ -1,6 +1,8 @@
 import { RenderService } from '../../render/render.service';
 import { Template } from '../dtos/template';
+import {Injectable} from "@nestjs/common";
 
+@Injectable()
 export abstract class Channel {
   private readonly renderService: RenderService;
   protected contents: Map<string, string> = new Map<string, string>();
@@ -35,5 +37,5 @@ export abstract class Channel {
     return data;
   }
 
-  abstract process(): string;
+  abstract process(): Promise<string>;
 }

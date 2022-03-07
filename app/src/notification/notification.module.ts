@@ -8,15 +8,18 @@ import { Channel } from './channels/channel';
 import { UserService } from './user.service';
 import { SubscriptionService } from './subscription.service';
 import { TypegooseModule } from 'nestjs-typegoose';
-import { TemplateModel } from './template.model';
+import { TemplateModel } from './dtos/template.model';
+import { Uiqueue } from './uiqueue';
+import {Notification} from "./dtos/notification.model";
 
 @Module({
-  imports: [RenderModule, TypegooseModule.forFeature([TemplateModel])],
+  imports: [RenderModule, TypegooseModule.forFeature([TemplateModel]), TypegooseModule.forFeature([Notification])],
   providers: [
     NotificationService,
     RenderService,
     UserService,
     SubscriptionService,
+    Uiqueue,
   ],
   controllers: [NotificationController],
 })

@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ~/apps/mongo:/data/db
+  mongodb-seed:
+    build:
+      context: .
+      dockerfile: ./seed.Dockerfile
+    links:
+      - mongodb
+  app:
+    container_name: api
+    image: notification-service:latest
+    links:
+      - mongodb
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: node dist/main.js
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node
+      - /home/node/node_modules
+    restart: unless-stopped

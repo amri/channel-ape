@@ -1,7 +1,9 @@
-import {Channel} from "./channel";
+import { Channel } from './channel';
 
 export class NullChannel extends Channel {
-    process(): string {
-        return '';
-    }
+  process(): Promise<string> {
+    return new Promise<string>((resolve) => {
+      resolve('');
+    });
+  }
 }

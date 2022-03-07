@@ -1,5 +1,5 @@
 import { prop } from '@typegoose/typegoose';
-import { Template } from './dtos/template';
+import { Template } from './template';
 
 export class TemplateModel {
   @prop({ required: true })

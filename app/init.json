@@ -1,0 +1,22 @@
+[
+  {
+    "notificationType": "happy-birthday",
+    "channelType": "email-channel",
+    "templates": [{"name": "content", "content": "{{=it.companyName}} is wishing you a happy birthday"}, {"name": "subject", "content": "Happy Birthday {{=it.firstName}}"}]
+  },
+  {
+    "notificationType": "happy-birthday",
+    "channelType": "ui-channel",
+    "templates": [{"name": "content", "content": "Hi {{=it.firstName}}, {{=it.companyName}} is wishing you a happy birthday"}]
+  },
+  {
+    "notificationType": "leave-balance-reminder",
+    "channelType": "ui-channel",
+    "templates": [{"name": "content", "content": "Hi {{=it.firstName}}, this is a reminder that you still have unused leave."}]
+  },
+  {
+    "notificationType": "monthly-payslip",
+    "channelType": "email-channel",
+    "templates": [{"name": "content", "content": "Hi, {{=it.firstName}}, your monthly payslip is now available"}, {"name": "subject", "content": "Month {{=it.month}} {{=it.year}} payslip"}]
+  }
+]
